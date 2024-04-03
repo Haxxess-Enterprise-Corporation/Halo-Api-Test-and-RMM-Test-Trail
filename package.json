@@ -1,0 +1,77 @@
+{
+  "name": "PSA and RMM Trail",
+  "version": "1.0.0",
+  "description": "An App used try PSA ",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon src/index.js --exec babel-node",
+    "build": "babel src --out-dir dist",
+    "start": "node dist/index.js",
+    "test": "nyc mocha --no-timeout './tests' --exit",
+    "test:report": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha --timeout 5000 './tests' --exit",
+    "coverage": "cross-env NODE_ENV=test nyc npm run test && nyc report --reporter=lcov --reporter=text-lcov --exit",
+    "heroku-postbuild": "npm run build",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\""
+  },
+  "keywords": [
+    "PSA",
+    "RMM",
+    "API",
+    "NodeJS"
+  ],
+  "author": "Tochukwu Ozurumba",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "chalk": "^3.0.0",
+    "concurrently": "^5.1.0",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "coveralls": "^3.0.9",
+    "cross-env": "^7.0.0",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "mocha": "^10.4.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-esnext": "^4.0.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "src/models/index.js",
+      "tests",
+      "node_modules"
+    ],
+    "require": [
+      "@babel/register"
+    ],
+    "sourceMap": false,
+    "cache": false,
+    "report-dir": "tests/report"
+  }
+}
