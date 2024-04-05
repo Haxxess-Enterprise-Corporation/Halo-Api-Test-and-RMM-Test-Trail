@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "89f17b4a-f5dd-4d8d-bec5-62269b30fc86",
+		"name": "Haxxess RMM Ninja One",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7072712"
+	},
+	"item": [
+		{
+			"name": "Get Organizations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ca.ninjarmm.com/v2/organizations",
+					"protocol": "https",
+					"host": [
+						"ca",
+						"ninjarmm",
+						"com"
+					],
+					"path": [
+						"v2",
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "control,monitoring",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "JS-ZTB8LL3OAdAiVsNfyQgoV_TBUAC0bhgdnjTkMlvD9OLSFyE2jDw",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "t0sQffNFMtpDqTxDuBKNsTLg1h8",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://ca.ninjarmm.com/ws/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "NinjaOne RMM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
